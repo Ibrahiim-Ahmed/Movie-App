@@ -46,30 +46,35 @@ class MyHomePage extends StatelessWidget {
                 backgroundImage:
                     NetworkImage('https://picsum.photos/id/237/200/300'),
               ),
-              TextField(
-                cursorColor: Colors.grey,
-                decoration: InputDecoration(
-                  fillColor: Colors.black38,
-                  filled: true,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
+              Center(
+                child: SizedBox(
+                  width: 350,
+                  child: TextField(
+                    cursorColor: Colors.grey,
+                    decoration: InputDecoration(
+                      fillColor: Colors.black38,
+                      filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide.none,
+                      ),
+                      prefixIcon: const Icon(
+                        Icons.search,
+                        color: Colors.red,
+                        size: 24,
+                      ),
+                      suffixIcon: const Icon(
+                        Icons.mic,
+                        color: Colors.red,
+                        size: 24,
+                      ),
+                      hintText: 'Search',
+                      hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
+                    ),
                   ),
-                  prefixIcon: const Icon(
-                    Icons.search,
-                    color: Colors.red,
-                    size: 24,
-                  ),
-                  suffixIcon: const Icon(
-                    Icons.mic,
-                    color: Colors.red,
-                    size: 24,
-                  ),
-                  hintText: 'Search',
-                  hintStyle: TextStyle(color: Colors.grey, fontSize: 16),
                 ),
               ),
-              const Text(
+              Text(
                 "Most Watched Movies",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
               ),
@@ -80,64 +85,57 @@ class MyHomePage extends StatelessWidget {
               ),
               Text("Popular Movies",
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800)),
-            ],
-          ),
-          ListView(
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
               Container(
-                height: 180.0,
-                width: 24.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/gf1.jpg'),
-                    fit: BoxFit.fill,
-                  ),
-                  shape: BoxShape.rectangle,
-                ),
-              ),
-              Container(
-                height: 180.0,
-                width: 24.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/gf2.jpg'),
-                    fit: BoxFit.fill,
-                  ),
-                  shape: BoxShape.rectangle,
-                ),
-              ),
-              Container(
-                height: 140.0,
-                width: 24.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/gf3.jpg'),
-                    fit: BoxFit.fill,
-                  ),
-                  shape: BoxShape.rectangle,
-                ),
-              ),
-              Container(
-                height: 180.0,
-                width: 24.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/lg.jpg'),
-                    fit: BoxFit.fill,
-                  ),
-                  shape: BoxShape.rectangle,
-                ),
-              ),
-              Container(
-                height: 180.0,
-                width: 24.0,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('assets/im.jpg'),
-                    fit: BoxFit.fill,
-                  ),
-                  shape: BoxShape.rectangle,
+                height: 150,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[
+                    Container(
+                      width: 200,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: new AssetImage("assets/gf1.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 200,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: new AssetImage("assets/gf2.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 200,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: new AssetImage("assets/gf3.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 100,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: new AssetImage("assets/im.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: 200,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: new AssetImage("assets/lg.jpg"),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -145,6 +143,7 @@ class MyHomePage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -159,13 +158,10 @@ class MyHomePage extends StatelessWidget {
             label: 'School',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.airplane_ticket),
             label: 'School',
           ),
         ],
-        // currentIndex: _selectedIndex,
-        // selectedItemColor: Colors.amber[800],
-        // onTap: _onItemTapped,
       ),
     );
   }
